@@ -1,0 +1,785 @@
+:root {
+    --primary-color: #d4af37;
+    /* Gold */
+    --secondary-color: #8b0000;
+    /* Dark Red */
+    --bg-dark: #0a0a0a;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --text-light: #f5f5f5;
+    --text-muted: #b0b0b0;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: var(--transition);
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-color);
+    transition: var(--transition);
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Header Banner (Thematic CSS) */
+.main-header {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, rgba(10, 10, 10, 0.9) 0%, rgba(26, 26, 26, 0.8) 100%), url('https://upload.wikimedia.org/wikipedia/commons/e/e3/Enrique_Santos_Discépolo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Parallax effect */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 4px solid var(--primary-color);
+    position: relative;
+    overflow: hidden;
+    color: var(--text-light);
+    text-align: center;
+}
+
+.main-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/dark-leather.png');
+    opacity: 0.3;
+}
+
+.header-overlay {
+    position: relative;
+    z-index: 1;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.banner-image-container {
+    width: 200px;
+    height: 200px;
+    margin-top: 8rem;
+    /* Lowered double the amount (from 4rem to 8rem) */
+    margin-bottom: 1rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--primary-color);
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+}
+
+.thematic-banner {
+    width: 140%;
+    /* Zoom in to focus on face */
+    height: 140%;
+    object-fit: cover;
+    object-position: center 5%;
+    /* Even lower face position within the crop */
+    filter: grayscale(1) contrast(1.4) brightness(1.1) sepia(1) saturate(2.5) hue-rotate(-10deg);
+    mix-blend-mode: screen;
+}
+
+.header-quote {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.main-header h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(45deg, #d4af37, #f9d976);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.header-mordisquito {
+    font-size: 1.2rem;
+    letter-spacing: 8px;
+    color: var(--text-muted);
+}
+
+.header-footer {
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    color: #ffffff;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Header / Hero */
+.hero {
+    height: 60vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://upload.wikimedia.org/wikipedia/commons/e/e3/Enrique_Santos_Discépolo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(45deg, #d4af37, #f9d976);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.gold-divider {
+    width: 100px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin: 1.5rem auto;
+}
+
+/* Main Chapters Grid */
+.main-chapters {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.main-chapters h2 {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column to match trivia options */
+    gap: 1.5rem;
+}
+
+.video-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex; /* Horizontal layout for single column */
+    align-items: center;
+}
+
+.video-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--primary-color);
+    transform: translateX(10px);
+}
+
+.video-card.active {
+    background: rgba(0, 255, 0, 0.05); /* Match trivia correct style hint */
+    border: 1px solid #00ff00;
+}
+
+.video-card img {
+    width: 250px;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-card-info {
+    padding: 1rem;
+    text-align: left;
+}
+
+.video-card-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+}
+
+.video-card-info p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* Video Section */
+.video-section {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    margin-top: -5rem;
+    margin-bottom: 4rem;
+}
+
+.video-container {
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 16/9;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.chapters {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    height: fit-content;
+}
+
+.chapters h2 {
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    padding-bottom: 0.5rem;
+}
+
+#chapter-list {
+    list-style: none;
+}
+
+.chapter-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: var(--transition);
+    border-left: 3px solid transparent;
+}
+
+.chapter-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.chapter-item.active {
+    background: rgba(212, 175, 55, 0.1);
+    border-left: 3px solid var(--primary-color);
+}
+
+.chapter-num {
+    font-weight: bold;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.chapter-info h3 {
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+}
+
+.chapter-info p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.video-placeholder {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.video-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.video-placeholder:hover img {
+    transform: scale(1.05);
+}
+
+.play-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+    transition: var(--transition);
+}
+
+.video-placeholder:hover .play-overlay {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.play-button {
+    width: 80px;
+    height: 80px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+    transition: var(--transition);
+}
+
+.play-button::after {
+    content: '';
+    position: absolute;
+    left: 45%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-style: solid;
+    border-width: 15px 0 15px 25px;
+    border-color: transparent transparent transparent #000;
+}
+
+.video-placeholder:hover .play-button {
+    transform: scale(1.1);
+    box-shadow: 0 0 50px rgba(212, 175, 55, 0.8);
+}
+
+/* Trivia Section & About Section */
+.trivia-section, .about-section {
+    padding: 4rem 0;
+}
+
+.about-card {
+    margin-bottom: 3rem;
+}
+
+.about-card p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: var(--text-muted);
+}
+
+.glass-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 3rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.glass-card h2 {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+#quiz-container {
+    text-align: left;
+}
+
+#question-text {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.option-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 10px;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 1rem;
+}
+
+.option-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--primary-color);
+}
+
+.option-btn.correct {
+    background: rgba(0, 255, 0, 0.15) !important;
+    border-color: #00ff00 !important;
+}
+
+.option-btn.wrong {
+    background: rgba(255, 0, 0, 0.15) !important;
+    border-color: #ff0000 !important;
+}
+
+.btn {
+    background: var(--primary-color);
+    color: #000;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: var(--transition);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+}
+
+.hidden {
+    display: none;
+}
+
+/* Scroll Reveal Classes */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Mesostico Game Styles */
+.pedagogical-header {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.pedagogical-label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.pedagogical-desc {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.mesostico-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 2rem auto;
+    font-family: monospace;
+    max-width: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.meso-row {
+    display: grid;
+    grid-template-columns: 1fr var(--meso-center-size, 36px) 1fr;
+    gap: var(--meso-col-gap, 4px);
+    align-items: center;
+    min-width: 0;
+    width: 100%;
+}
+
+.meso-row.empty-row {
+    height: 20px;
+}
+
+.meso-left {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--meso-cell-gap, 4px);
+    min-width: 0;
+    overflow: visible;
+}
+
+.meso-right {
+    display: flex;
+    justify-content: flex-start;
+    gap: var(--meso-cell-gap, 4px);
+    min-width: 0;
+    overflow: visible;
+}
+
+.meso-center {
+    display: flex;
+    justify-content: center;
+}
+
+.meso-input, .meso-cell {
+    width: var(--meso-cell-size, 35px);
+    height: var(--meso-cell-size, 35px);
+    min-width: var(--meso-cell-size, 35px);
+    text-align: center;
+    font-size: var(--meso-font-size, 1.2rem);
+    text-transform: uppercase;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    flex-shrink: 0;
+}
+
+.meso-input {
+    background: rgba(0, 0, 0, 0.5);
+    color: var(--text-light);
+    outline: none;
+    transition: var(--transition);
+}
+
+.meso-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+}
+
+.meso-input.correct {
+    background: rgba(0, 255, 0, 0.15);
+    border-color: #00ff00;
+    pointer-events: none;
+}
+
+.meso-cell.spine {
+    background: var(--primary-color);
+    color: #000;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-color: var(--primary-color);
+}
+
+.hint-box {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    font-size: 1.1rem;
+    color: var(--text-light);
+    transition: var(--transition);
+}
+
+.feedback-box {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--primary-color);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Footer & Logos */
+.footer {
+    padding: 2rem;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.footer-logos a img {
+    max-height: 100px;
+    width: auto;
+    transition: var(--transition);
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.1));
+}
+
+.footer-logos a:hover img {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.3));
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .nav-links {
+        display: none; /* Hide for now, can add toggle logic in JS */
+    }
+    .menu-toggle {
+        display: flex;
+    }
+    .video-section {
+        grid-template-columns: 1fr;
+    }
+    .main-header {
+        height: auto;
+        padding: 8rem 0 3rem; /* Extra top padding for navbar */
+    }
+    .main-header h1 {
+        font-size: 2.5rem;
+    }
+    .video-card {
+        flex-direction: column; /* Stack image and text */
+    }
+    .video-card img {
+        width: 100%;
+        aspect-ratio: 16/9;
+    }
+    .banner-image-container {
+        margin-top: 5rem;
+    }
+    .video-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .video-card {
+        flex-direction: column; /* Stack image and text */
+        flex: unset;
+        scroll-snap-align: unset;
+    }
+}
+
+@media (max-width: 600px) {
+    .options-grid {
+        grid-template-columns: 1fr;
+    }
+    .main-header h1 {
+        font-size: 2rem;
+    }
+    .header-quote {
+        font-size: 1.2rem;
+    }
+    .glass-card {
+        padding: 1.5rem 1rem;
+    }
+    .glass-card h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .glass-card {
+        padding: 1rem 0.75rem;
+    }
+}
+
+/* .container padding on mobile to give more room to mesostico */
+@media (max-width: 600px) {
+    .container {
+        padding: 1.5rem 1rem;
+    }
+}

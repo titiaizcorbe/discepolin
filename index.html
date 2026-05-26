@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discépolo: Filosofía y Tango</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">Centro Discepolín de Morón</div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#quienes-somos">Quiénes Somos</a></li>
+                <li><a href="#discepolo">Discépolo</a></li>
+                <li><a href="#juegos-interactivos">Juegos Interactivos</a></li>
+            </ul>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <header class="main-header parallax-header" id="inicio">
+        <div class="header-overlay reveal">
+            <div class="banner-image-container">
+                <img src="header-banner.png" alt="Discépolo Mordisquito" class="thematic-banner">
+            </div>
+            <p class="header-quote">"A mí no me la vas a contar..."</p>
+            <h1>Enrique Santos Discépolo</h1>
+            <p class="header-mordisquito">MORDISQUITO</p>
+            <div class="gold-divider"></div>
+            <p class="header-footer">No hay democracia con proscripción</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="quienes-somos" class="about-section reveal">
+            <div class="glass-card about-card">
+                <h2>Quiénes Somos</h2>
+                <p>El Centro Discepolín de Morón es un espacio dedicado a la cultura, el pensamiento nacional y la difusión del legado de Enrique Santos Discépolo. Promovemos el encuentro, el debate y la memoria activa a través de diversas actividades culturales y educativas.</p>
+                <p>Nuestra misión es mantener vivo el espíritu crítico y la pasión por nuestra identidad nacional, tal como lo expresaba el gran "Mordisquito".</p>
+            </div>
+        </section>
+
+        <section id="discepolo" class="main-chapters reveal">
+            <h2>Colección: El Pensamiento de Discépolo</h2>
+            <div class="video-grid" id="main-chapter-grid">
+                <!-- Chapters will be injected here via JS -->
+            </div>
+        </section>
+
+        <section class="video-section reveal">
+            <div class="video-container" id="video-wrapper">
+                <div id="video-placeholder" class="video-placeholder">
+                    <img id="placeholder-img" src="" alt="Video Preview">
+                    <div class="play-overlay">
+                        <div class="play-button"></div>
+                    </div>
+                </div>
+                <div id="main-player" class="hidden"></div>
+            </div>
+            <div class="chapters">
+                <h2 id="current-video-title">Capítulos del Video</h2>
+                <ul id="chapter-list">
+                    <!-- Segments will be injected here via JS -->
+                </ul>
+            </div>
+        </section>
+
+        <section class="trivia-section reveal" id="juegos-interactivos">
+            <div class="glass-card trivia-card">
+                <h2>¿Qué aprendiste sobre Discépolo?</h2>
+                <div id="quiz-container">
+                    <div id="question-text"></div>
+                    <div id="options-container"></div>
+                    <button id="next-btn" class="btn hidden">Siguiente Pregunta</button>
+                    <div id="quiz-result" class="hidden">
+                        <h3>Tu resultado</h3>
+                        <p id="score-text"></p>
+                        <button onclick="location.reload()" class="btn">Reiniciar Trivia</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card mesostico-card" style="margin-top: 3rem;">
+                <div class="pedagogical-header">
+                    <p class="pedagogical-label">Actividad integrada en la sección Juegos Interactivos del trayecto "Filosofía desde el Arte"</p>
+                    <p class="pedagogical-desc">El estar-siendo no es una teoría, es el barro donde pisamos. Es el café frío, la noche larga y el destino que nos pesa. En este mesóstico, la columna vertebral de Kusch se entrecruza con el lunfardo de Discépolo. Descubrí las palabras del arrabal para revelar el aforismo oculto del fracaso y la redención.</p>
+                </div>
+                <h2>Mesóstico: ESTAR SIENDO</h2>
+                <div id="mesostico-hint" class="hint-box">Toca cualquier casillero vacío para ver la pista de la palabra a descubrir.</div>
+                <div id="mesostico-container" class="mesostico-grid">
+                    <!-- Mesostic rows injected via JS -->
+                </div>
+                <div id="mesostico-feedback" class="feedback-box hidden"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Discépolo Interactivo. Inspirado en el pensamiento de Cristina Lopéz y Agustin Pizzichini.</p>
+        <div class="footer-logos">
+            <a href="https://cristinalibre.com/" target="_blank" rel="noopener noreferrer">
+                <img src="cristina-libre.png" alt="Cristina Libre">
+            </a>
+            <a href="https://www.instagram.com/filosofiadesdelarte/" target="_blank" rel="noopener noreferrer">
+                <img src="filosofia-arte.jpg" alt="Filosofía desde el Arte">
+            </a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
